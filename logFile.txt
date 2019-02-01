@@ -1,0 +1,71 @@
+
+                                      CodeAnalysis - Version 1.4
+    ==============================================================================================
+     Tue May  1 19:19:28 2018
+     Path: "C:\Users\Tanming Cui\Desktop\CSE687_FinalProject"
+     Args: *.h, *.cpp, *.cs, /v, /r, /f
+                                                                               
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+            Client2.g.i.cs    function       DebuggerNonUserCodeAttribute     182     122       2
+            Client2.g.i.cs    function       DebuggerNonUserCodeAttribute     182     122       2
+            Client2.g.i.cs    function       DebuggerNonUserCodeAttribute     182     122       2
+                  Comm.cpp    function                       DemoSndrRcvr     393      79       1
+                  Comm.cpp    function                      DemoCommClass     479      68       1
+                  Comm.cpp    function                       DemoSndrRcvr     329      79       1
+                  Comm.cpp    function                      DemoCommClass     415      68       1
+   Cpp11-BlockingQueue.cpp    function                               main      35      52       3
+              DateTime.cpp    function                           DateTime      57      24      14
+              DateTime.cpp    function                           DateTime      56      28      15
+            FileSystem.cpp    function                               main     789     399      31
+            FileSystem.cpp    function                               main     775     399      31
+           MainWindow.g.cs    function       DebuggerNonUserCodeAttribute     126      53       2
+           MainWindow.g.cs    function       DebuggerNonUserCodeAttribute     102      78       2
+           MainWindow.g.cs    function       DebuggerNonUserCodeAttribute     238     143       2
+         MainWindow.g.i.cs    function       DebuggerNonUserCodeAttribute     182     122       2
+         MainWindow.g.i.cs    function       DebuggerNonUserCodeAttribute     182     122       2
+         MainWindow.g.i.cs    function       DebuggerNonUserCodeAttribute     238     143       2
+               Message.cpp    function                               main     223      56       1
+               Message.cpp    function                               main     223      56       1
+               Sockets.cpp    function                            connect     330      63       8
+               Sockets.cpp    function                            connect     330      63       8
+               Sockets.cpp    function           clientTestBufferHandling     734      61       8
+               Sockets.cpp    function           clientTestBufferHandling     734      61       8
+             Tokenizer.cpp    function                               main     329      61       8
+             Utilities.cpp    function                               main     128      56       2
+           XmlHelpDemo.cpp    function                               main     117     106      10
+
+              public data: Browse.h : 18 - class Browse
+                std :: string noparent ( DbCore < PayLoad > & db ) ; 
+              public data: Comm.h : 64 - struct Context
+                Path sendFilePath ; 
+              public data: Comm.h : 65 - struct Context
+                Path saveFilePath ; 
+              public data: CsMessage.h : 40 - class Sutils
+                static std :: string MtoNstr ( String ^ s ) ; 
+              public data: Message.h : 45 - struct EndPoint
+                Address address ; 
+              public data: Message.h : 46 - struct EndPoint
+                Port port ; 
+              public data: Message.h : 41 - struct EndPoint
+                Address address ; 
+              public data: Message.h : 42 - struct EndPoint
+                Port port ; 
+              public data: Message.h : 41 - struct EndPoint
+                Address address ; 
+              public data: Message.h : 42 - struct EndPoint
+                Port port ; 
+              public data: TestUtilities.h : 98 - struct {
+                Test test ; 
+              public data: TestUtilities.h : 99 - struct {
+                std :: string testName ; 
+              public data: TestUtilities.h : 92 - struct {
+                Test test ; 
+              public data: TestUtilities.h : 93 - struct {
+                std :: string testName ; 
+
+
+    searched   262 dirs
+   processed   178 files

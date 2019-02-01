@@ -1,0 +1,75 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="556.947" Width="615.774" Loaded="Window_Loaded">
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////
+    // MainWindow.xaml - GUI for Project4                                //
+    // ver 1.1                                                           //
+    // Tanming Cui, CSE687 - Object Oriented Design, Spring 2018         //
+    ///////////////////////////////////////////////////////////////////////
+    -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="1" Name="tabControl">
+            <TabItem Header="Local" Name="Checkin" >
+                <Grid>
+                    <ListBox Name="checkinbox" MouseDoubleClick="checkinbox_MouseDoubleClick" HorizontalAlignment="Left" Height="159" Margin="229,36,0,0" VerticalAlignment="Top" Width="366"/>
+                    <ListBox Name="checkinfiles" HorizontalAlignment="Left" Height="223" Margin="229,247,0,0" VerticalAlignment="Top" Width="366"/>
+                    <Button Name="checkin" Content="Check In" HorizontalAlignment="Left" Margin="10,435,0,0" VerticalAlignment="Top" Width="198" Height="35" Click="checkin_Click" RenderTransformOrigin="0.432,1.772"/>
+                    <Label Content="Local Directories" HorizontalAlignment="Left" Margin="229,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.042,-0.026" Width="102"/>
+                    <Label Content="Local Files" HorizontalAlignment="Left" Margin="229,221,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.042,-0.026" Width="102"/>
+                    <Label Content="Description" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.042,-0.026" Width="102"/>
+                    <Label Content="Dependency" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.042,-0.026" Width="102"/>
+                    <TextBox Name="description" HorizontalAlignment="Left" Height="159" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" />
+                    <TextBox Name ="dependency" HorizontalAlignment="Left" Height="105" Margin="10,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198"/>
+                    <RadioButton Name="isopen" Content="Open" HorizontalAlignment="Left" Margin="10,393,0,0" VerticalAlignment="Top" IsChecked="True" Height="18" Width="108"/>
+                    <RadioButton Name="isclose" Content="Close" HorizontalAlignment="Left" Margin="118,393,0,0" VerticalAlignment="Top" Height="18" Width="90"/>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Remote" >
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" Margin="229,14,0,0" TextWrapping="Wrap" Text="Remote Directories" VerticalAlignment="Top" Height="22" Width="123"/>
+                    <ListBox Name="checkoutdirs" MouseDoubleClick="checkoutdirs_MouseDoubleClick" HorizontalAlignment="Left" Height="159" Margin="229,36,0,0" VerticalAlignment="Top" Width="366"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="229,225,0,0" TextWrapping="Wrap" Text="Remote Files" VerticalAlignment="Top" Height="22" Width="123"/>
+                    <ListBox Name="checkoutfiles" MouseDoubleClick="checkoutfiles_MouseDoubleClick" HorizontalAlignment="Left" Height="223" Margin="229,247,0,0" VerticalAlignment="Top" Width="366"/>
+                    <Button Name="getdirs" Content="Get" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="140" Height="35" Click="getdirs_Click"/>
+                    <Button Name="checkout" Content="Check Out" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Width="140" Height="35" Click="checkout_Click" />
+                    <Button Name="noparent" Content="No Parent" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" Width="140" Height="35" Click="noparent_Click" />
+                    <Button Name="modify" Content="Change Dependency" HorizontalAlignment="Left" Margin="10,377,0,0" VerticalAlignment="Top" Width="140" Height="35" Click="modify_Click"  />
+                    <Button Name="view" Content="View metadata" HorizontalAlignment="Left" Margin="10,435,0,0" VerticalAlignment="Top" Width="140" Height="35" Click="view_Click"  />
+                    <TextBox Name="changedepend" HorizontalAlignment="Left" Height="125" Margin="10,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Connect" IsSelected="True">
+                <Grid>
+                    <ListBox HorizontalAlignment="Left" Name="connectbox" Height="433" Margin="128,37,0,0" VerticalAlignment="Top" Width="468"/>
+                    <Button Name="connect" Content="Connect" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="87" Height="35" Click="connect_Click"/>
+                    <Button Name="disconnect" Content="Disconnect" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top" Width="87" Height="35" Click="disconnect_Click" RenderTransformOrigin="0.59,-0.504"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="128,15,0,0" TextWrapping="Wrap" Text="Remote Repository" VerticalAlignment="Top" Height="22" Width="123"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="About" >
+                <Grid>
+                    <Label Content="Local Tab:&#xA;   When check in a file in the client folder. You can write the description for the file in the description text box.&#xA;   You can write down all dependency files in the dependency text box, all input full file name are separated &#xA;  by &quot;,&quot;, no space between all the input file name.&#xA;   You can choose the the file is open or close. But the file can only be closed when all its dependency files &#xA;  are existed in the repository, and they are closed.&#xA;   Click &quot;Check In&quot; button to finish check in request.&#xA;   If appear circular depend, the check in request will be rejected.&#xA;&#xA;Remote Tab:&#xA;   View all the data in the database when clicking the &quot;view metadata&quot; button.&#xA;   View all of the files in any category that have no parents when clicking &quot;no parent&quot; button.&#xA;   Change the dependency file of the selected file, select the file in the repository, write the new dependency,&#xA;  and it will change the dependency relationship. Only the latest version of the file can be modified. Circle&#xD;&#xA;  dependency is not allowed.&#xA;   Check out the selected file when clicking &quot;Check Out&quot; button.&#xA;&#xA;Connect Tab:&#xA;   Mock client connect and disconnect process.&#xA;   When clicking &quot;Disconnect&quot; button, a new random port will be generate and the client will use new port &#xA;  to send and receive message." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="460" Width="585"/>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        <StatusBar Grid.Row="2">
+            <TextBlock Name="statusBarText" Text="This is a status bar"/>
+        </StatusBar>
+    </Grid>
+</Window>

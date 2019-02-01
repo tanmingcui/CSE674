@@ -1,0 +1,1 @@
+devenv CSE687_FinalProject.sln /rebuild debug

@@ -1,0 +1,28 @@
+﻿<Window x:Class="GUI.CodePopUpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="CodePopUpWindow" Height="358.97" Width="615.774" >
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////
+    // CodePopUpWindow.xaml - GUI for Project4                           //
+    // ver 1.1                                                           //
+    // Tanming Cui, CSE687 - Object Oriented Design, Spring 2018         //
+    ///////////////////////////////////////////////////////////////////////
+    -->
+    <Grid Margin="0,0,-4.8,-0.2">
+        <TextBox HorizontalAlignment="Left" Height="312" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="583"/>
+        <FlowDocumentScrollViewer Grid.Row="1" BorderThickness="1" BorderBrush="Black">
+            <FlowDocument Name="CodeView" FontFamily="Consolas" FontSize="12">
+                <Paragraph Name="main">
+                    <LineBreak>
+                    </LineBreak>
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+
+    </Grid>
+</Window>
